@@ -4,7 +4,7 @@
   "description": "This extension allows the user to change the background color of the current page.",
   "version": "1.0",
   "chrome_url_overrides" : {
-     "newtab": "popup.html"
+     "newtab": "popup.php"
    },
   "browser_action": {
     "default_icon": "icon.png",
