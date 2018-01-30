@@ -1,11 +1,18 @@
 {
-  "name": "Hello World!",
+  "name":"Change the background color",
+  "manifest_version": 2,
+  "description": "This extension allows the user to change the background color of the current page.",
   "version": "1.0",
-  "manifest_version":2,
-  "description": "My first Chrome extension.",
+  "chrome_url_overrides" : {
+     "newtab": "popup.php"
+   },
   "browser_action": {
     "default_icon": "icon.png",
-    "default_popup":"popup.html"
-  }
-  
+    "default_popup": "popup.html",
+    "default_title": "Click here!"
+  },
+  "permissions": [
+    "activeTab",
+    "storage"
+  ]
 }
