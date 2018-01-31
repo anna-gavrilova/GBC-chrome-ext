@@ -1,50 +1,65 @@
-
-<!doctype html>
-<!--
- This page is shown when the extension button is clicked, because the
- "browser_action" field in manifest.json contains the "default_popup" key with
- value "popup.html".
- -->
+<!DOCTYPE html>
 <html>
   <head>
-    <title>Getting Started Extension's Popup</title>
-    <style type="text/css">
-      body {
-        margin: 10px;
-        white-space: nowrap;
-      }
+    <meta charset="utf-8">
+    <title></title>
 
-      h1 {
-        font-size: 15px;
-      }
-
-      #container {
-        align-items: center;
-        display: flex;
-        justify-content: space-between;
-      }
-    </style>
-
-    <!--
-      - JavaScript and HTML must be in separate files: see our Content Security
-      - Policy documentation[1] for details and explanation.
-      -
-      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
-    -->
-    <script src="popup.js"></script>
+    <!-- Bulma framework -->
+    <link rel="stylesheet"href="bulma/css/bulma.css" />
+<style>
+tr>td:hover{
+  background-color: lightgrey;
+}
+</style>
   </head>
-
   <body>
-    <h1>Background Color Changer</h1>
-    <div id="container">
-      <span>Choose a color</span>
-      <select id="dropdown">
-        <option selected disabled hidden value=''></option>
-        <option value="white">White</option>
-        <option value="pink">Pink</option>
-        <option value="green">Green</option>
-        <option value="yellow">Yellow</option>
-      </select>
-    </div>
+    <table class="table is-bordered" id="schedule">
+      <th>
+
+        <td>
+          Mon
+        </td>
+        <td>
+          Tue
+        </td>
+        <td>
+          Wed
+        </td>
+        <td>
+          Thu
+        </td>
+        <td>
+          Fri
+        </td>
+        <td>
+          Sat
+        </td>
+        <td>
+          Sun
+        </td>
+      </th>
+
+        <script>
+          var i=8;
+          var data="";
+          while(i<24){
+            data+="<tr><td>"+i.toString()+":00</td>";
+            var n=0;
+            while(n<7){
+              data+="<td></td>";
+              n++;
+            }
+            data+="</tr>"
+
+
+            i++;
+          }
+          console.log(data);
+          document.getElementById("schedule").innerHTML+=data;
+
+
+        </script>
+
+    </table>
   </body>
 </html>
